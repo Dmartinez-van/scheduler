@@ -12,7 +12,7 @@ export default function Application(props) {
           <img className="sidebar__lhl sidebar--centered" src="images/lhl.png" alt="Lighthouse Labs"/>
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        {/* Replace this with the schedule elements during the "The Scheduler" activity. */}
       </section>
     </main>
   );
