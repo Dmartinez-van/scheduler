@@ -29,6 +29,7 @@ export default function Application(props) {
   ];
 
   const [day, setDay] = useState("Monday");
+  console.log(day);
 
   return (
     <main className="layout">
