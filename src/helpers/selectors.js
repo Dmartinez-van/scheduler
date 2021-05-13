@@ -1,4 +1,4 @@
-export function getAppointmentsForDay(state, day) {
+const getAppointmentsForDay = function(state, day) {
   // console.log("Before", state)
   if (!state.days.length) {
     return [];
@@ -19,3 +19,19 @@ export function getAppointmentsForDay(state, day) {
   // console.log("After", state)
   return appointmentsForDay
 }
+
+const getInterview = function(state, interview) {
+  if(!interview) {
+    return null
+  }
+  // const student = interview.student;
+  // const interviewer = state.interviewers[interview.interviewer]
+  const interviewObject = {
+    student: interview.student,
+    interviewer: state.interviewers[interview.interviewer]
+  }
+
+  return interviewObject
+}
+
+export {getAppointmentsForDay, getInterview}
