@@ -15,8 +15,23 @@ export default function Application() {
     appointments: {}
   });
 
+  const bookInterview = (id, interview) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    return (
+      axios.put(`http://localhost:8001/api/appointments/${id}`, appointment).then(res => {
+            setState({...state, appointments})
+          })
+    )
+  }
+
   const setDay = day => setState({...state, day});
-  // const setDays = days => setState(prev => ({...prev, days}));
   const dailyAppointments = getAppointmentsForDay(state, state.day)
 
   useEffect(() => {
@@ -28,7 +43,11 @@ export default function Application() {
       axios
         .get(`http://localhost:8001/api/interviewers`)
       ]).then((all) => {
-        setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
+        setState(prev => ({...prev,
+                            days: all[0].data,
+                            appointments: all[1].data,
+                            interviewers: all[2].data
+                          }));
       });
   }, [])
 
@@ -44,7 +63,8 @@ export default function Application() {
       // id = {appointment.id}
       // time = {appointment.time}
       interview={interview}
-      interviewers={interviewerArr} 
+      interviewers={interviewerArr}
+      bookInterview={bookInterview}
     />
     );
   });
