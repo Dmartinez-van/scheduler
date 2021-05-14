@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const useVisualMode = function(initial) {
   let [history, setHistory] = useState([initial]);
-  // let [mode, setMode] = useState(initial);
 
   const transition = function(newMode, replace = false) {
     if (!replace) {
@@ -10,7 +9,7 @@ const useVisualMode = function(initial) {
     }
     setHistory(prev => [...prev.slice(0,-1), newMode])
 
-    return history[history.length - 1]
+    // return history[history.length - 1]
   }
 
   const back = function() {

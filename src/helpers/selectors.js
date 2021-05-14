@@ -34,4 +34,24 @@ const getInterview = function(state, interview) {
   return interviewObject
 }
 
-export {getAppointmentsForDay, getInterview}
+const getInterviewersForDay = function(state, day) {
+  if (!state.days.length) {
+    return [];
+  }
+
+  // Grab array from state.days, filter by our day parameter (returns one array of one element)
+  const filteredDays = state.days.filter(days => day === days.name);
+
+  if (!filteredDays.length) {
+    return [];
+  }
+
+  // Find matching interviewers information in filteredDays in state.interviewers and return that array
+  const interviewersForDay = filteredDays[0].interviewers.map((interviewerId) => {
+    return state.interviewers[interviewerId] 
+  });
+  // console.log(interviewersForDay)
+  return interviewersForDay
+}
+
+export {getAppointmentsForDay, getInterview, getInterviewersForDay}
