@@ -5,11 +5,15 @@ import Header from "components/Appointment/Header";
 import Empty from "components/Appointment/Empty";
 import Show from "components/Appointment/Show";
 import Form from "components/Appointment/Form";
+import Status from "components/Appointment/Status";
+import Confirm from "components/Appointment/Confirm";
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
-// const CONFIRM = "CONFIRM";
+const SAVING = "SAVING";
+const DELETING = "DELETING";
+const CONFIRM = "CONFIRM";
 // const ERROR = "ERROR";
 
 
@@ -24,7 +28,17 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
+    transition(SAVING);
     props.bookInterview(props.id, interview).then(() => transition(SHOW))
+  }
+
+  function deleteBooking() {
+    transition(DELETING);
+    props.cancelInterview(props.id).then(() => transition(EMPTY))
+  }
+
+  function confirmDelete() {
+    transition(CONFIRM);
   }
 
   return (
@@ -37,8 +51,13 @@ export default function Appointment(props) {
         {mode === SHOW && <Show 
                                 student={props.interview.student} 
                                 interviewer={props.interview.interviewer} 
+                                onDelete={confirmDelete}
                           />}
         {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => back()} onSave={save} />}
+        {mode === SAVING && <Status message="Saving" />}
+        {mode === DELETING && <Status message="Deleting" />}
+        {mode === CONFIRM && <Confirm message="Are you sure you would like to delete?" onConfirm={deleteBooking} onCancel={() => back()}/>}
+
     
     </article>
   )
