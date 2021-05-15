@@ -5,7 +5,7 @@ import Button from "components/Button";
 export default function Form(props) {
 
   const [name, setName] = useState(props.name || "");
-  const [interviewer, setInterviewer] = useState(props.value || null);
+  const [interviewer, setInterviewer] = useState(props.value || props.interviewer.id);
 
   const reset = () => {
       setName("");
@@ -16,6 +16,7 @@ export default function Form(props) {
     props.onCancel();
     reset();
   }
+  console.log(props);
 
   return (
     <main className="appointment__card appointment__card--create">
