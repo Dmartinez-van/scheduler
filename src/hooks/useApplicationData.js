@@ -69,12 +69,7 @@ const useApplicationData = () => {
     };
     const days = updateSpots(state.day, state.days, appointments);
     return axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
-                .then(res => {
-                  console.log("before ", state)
-                  
-                  setState({...state, days, appointments})
-                  console.log("after ", state);
-                });          
+                .then(res => setState({...state, days, appointments}));          
   }       
   
   const cancelInterview = (id) => {
