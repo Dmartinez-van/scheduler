@@ -43,6 +43,7 @@ export default function Application() {
               days={state.days}
               day={state.day}
               setDay={setDay}
+              // setDay={dispatch({type: SET_DAY, day})
             />
           </nav>
           <img className="sidebar__lhl sidebar--centered" src="images/lhl.png" alt="Lighthouse Labs"/>

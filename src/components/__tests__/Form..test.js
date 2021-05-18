@@ -89,10 +89,15 @@ describe("These tests are for the 'Form' component", () => {
     fireEvent.change(getByPlaceholderText("Enter Student Name"), {
       target: { value: "Lydia Miller-Jones" }
     });
+
+    // fireEvent.change(getAllByTestId("select-option"), {
+    //   target: { value: 2 }
+    // });
   
     fireEvent.click(getByText("Save"));
   
     expect(queryByText(/student name cannot be blank/i)).toBeNull();
+    // expect(queryByText(/interviewer cannot be blank/i)).not.toBeNull();
   
     expect(onSave).toHaveBeenCalledTimes(1);
     expect(onSave).toHaveBeenCalledWith("Lydia Miller-Jones", null);
