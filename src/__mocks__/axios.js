@@ -79,6 +79,7 @@ export default {
       });
     };
   }),
+  
   put: jest.fn(url => {
     if (url === "http://localhost:8001/api/days/1") {
       return Promise.resolve({
@@ -103,6 +104,32 @@ export default {
         data: fixtures.interviewers
       });
     };
-  })
+  }),
+
+  delete: jest.fn(url => {
+    if (url === "http://localhost:8001/api/days/2") {
+      return Promise.resolve({
+        status: 204,
+        statusText: "No Content",
+        data: fixtures.days
+      });
+    };
+
+    if (url === "http://localhost:8001/api/appointments/2") {
+      return Promise.resolve({
+        status: 204,
+        statusText: "No Content",
+        data: fixtures.appointments
+      });
+    };
+
+    if (url === "http://localhost:8001/api/interviewers/2") {
+      return Promise.resolve({
+        status: 204,
+        statusText: "No Content",
+        data: fixtures.interviewers
+      });
+    };
+  }),
 
 }
