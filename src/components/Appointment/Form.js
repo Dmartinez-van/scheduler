@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
-import DayListItem from "components/DayListItem";
 
 export default function Form(props) {
 
@@ -26,17 +25,17 @@ export default function Form(props) {
       return;
     }
     // ********** To implement the below conditional, I need to figure out how to test a selection of an interviewer first ****** 
-    // if (interviewer === null) {
-    //   setError("Interviewer cannot be blank");
-    //   return;
-    // }
+    if (interviewer === null) {
+      setError("Interviewer cannot be blank");
+      return;
+    }
     setError("");
     props.onSave(name, interviewer);
   };
 
   return (
     <main className="appointment__card appointment__card--create">
-      <section className="appointment__card-left" data-testid="select-option" key={props.key} value={props.key}>
+      <section className="appointment__card-left">
         <form autoComplete="off" onSubmit={event => event.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
@@ -51,7 +50,7 @@ export default function Form(props) {
             */
           />
         </form>
-        <section className="appointment__validation">{error}</section>
+        <section className="appointment__validation" data-testid={"interviewer-select"}>{error}</section>
         <InterviewerList
           interviewers={props.interviewers}
           value={interviewer}
