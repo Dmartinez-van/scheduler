@@ -82,7 +82,7 @@ export default {
   }),
   
   put: jest.fn(url => {
-    if (url === "http://localhost:8001/api/days/2") {
+    if (url === `http://localhost:8001/api/days/1` || url === `http://localhost:8001/api/days/2`) {
       return Promise.resolve({
         status: 204,
         statusText: "No Content",
@@ -90,7 +90,7 @@ export default {
       });
     };
 
-    if (url === "http://localhost:8001/api/appointments/2") {
+    if (url === `http://localhost:8001/api/appointments/1` || url === `http://localhost:8001/api/appointments/2`) {
       return Promise.resolve({
         status: 204,
         statusText: "No Content",
@@ -98,7 +98,7 @@ export default {
       });
     };
 
-    if (url === `http://localhost:8001/api/interviewers/2`) {
+    if (url === `http://localhost:8001/api/interviewers/1` || url === `http://localhost:8001/api/interviewers/2`) {
       return Promise.resolve({
         status: 204,
         statusText: "No Content",
