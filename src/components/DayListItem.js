@@ -6,10 +6,10 @@ const classNames = require("classnames");
 export default function DayListItem(props) {
 
   const formatSpots = () => {
-    return props.spots ? 
-      (props.spots > 1 ? `${props.spots} spots remaining` : `${props.spots} spot remaining`) 
-      : "no spots remaining";
-  }
+    return (
+      props.spots ? (props.spots > 1 ? `${props.spots} spots remaining` : `${props.spots} spot remaining`): "no spots remaining"
+    )
+  };
 
   let dayListItemClass = classNames({
     "day-list__item": true,

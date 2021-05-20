@@ -12,15 +12,15 @@ const getAppointmentsForDay = function(state, day) {
 
   // Find matching appointment information in filteredDays in state.appointments and return that array
   const appointmentsForDay = filteredDays[0].appointments.map((appointmentId) => {
-    return state.appointments[appointmentId] 
+    return state.appointments[appointmentId];
   });
 
-  return appointmentsForDay
+  return appointmentsForDay;
 }
 
 const getInterview = function(state, interview) {
   if(!interview) {
-    return null
+    return null;
   }
 
   const interviewObject = {
@@ -28,7 +28,7 @@ const getInterview = function(state, interview) {
     interviewer: state.interviewers[interview.interviewer]
   }
 
-  return interviewObject
+  return interviewObject;
 }
 
 const getInterviewersForDay = function(state, day) {
@@ -48,7 +48,7 @@ const getInterviewersForDay = function(state, day) {
     return state.interviewers[interviewerId] 
   });
 
-  return interviewersForDay
+  return interviewersForDay;
 }
 
 export {getAppointmentsForDay, getInterview, getInterviewersForDay}

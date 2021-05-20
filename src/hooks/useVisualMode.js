@@ -5,9 +5,9 @@ const useVisualMode = function(initial) {
 
   const transition = function(newMode, replace = false) {
     if (!replace) {
-      setHistory(prev => [...prev, newMode])
+      setHistory(prev => [...prev, newMode]);
     }
-    setHistory(prev => [...prev.slice(0,-1), newMode])
+    setHistory(prev => [...prev.slice(0,-1), newMode]);
   }
 
   const back = function() {

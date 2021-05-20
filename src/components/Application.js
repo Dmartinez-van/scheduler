@@ -14,7 +14,7 @@ export default function Application() {
     cancelInterview,
   } = useApplicationData();
   
-  const interviewerArr = getInterviewersForDay(state, state.day)
+  const interviewerArr = getInterviewersForDay(state, state.day);
 
   const dailyAppointments = getAppointmentsForDay(state, state.day).map(appointment => {
     return (
