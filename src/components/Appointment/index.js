@@ -58,16 +58,25 @@ export default function Appointment(props) {
                                 onDelete={confirmDelete}
                                 onEdit={() => transition(EDIT)}
                           />}
-        {mode === CREATE && <Form interviewers={props.interviewers} onCancel={() => back()} onSave={save} />}
+        {mode === CREATE && <Form 
+                              interviewers={props.interviewers} 
+                              onCancel={() => back()} onSave={save} />}
         {mode === SAVING && <Status message="Saving" />}
         {mode === DELETING && <Status message="Deleting" />}
-        {mode === CONFIRM && <Confirm message="Are you sure you would like to delete?" onConfirm={deleteBooking} onCancel={() => back()}/>}
-        {mode === EDIT && <Form interviewers={props.interviewers} name={props.interview.student}
-                                interviewer={props.interview.interviewer} onCancel={() => back()} onSave={save} />}
-        {mode === ERROR_DELETE && <Error  message="Could not delete appointment" onClose={() => transition(SHOW)}/>}
-        {mode === ERROR_SAVE && <Error  message="Could not save appointment" onClose={() => transition(SHOW)}/>}
+        {mode === CONFIRM && <Confirm 
+                                message="Are you sure you would like to delete?"
+                                onConfirm={deleteBooking} onCancel={() => back()}/>}
+        {mode === EDIT && <Form 
+                            interviewers={props.interviewers} name={props.interview.student}
+                            interviewer={props.interview.interviewer} onCancel={() => back()}
+                            onSave={save} />}
+        {mode === ERROR_DELETE && <Error
+                                    message="Could not delete appointment" 
+                                    onClose={() => transition(SHOW)}/>}
+        {mode === ERROR_SAVE && <Error  
+                                  message="Could not save appointment" 
+                                  onClose={() => transition(SHOW)}/>}
 
-    
     </article>
   )
 };

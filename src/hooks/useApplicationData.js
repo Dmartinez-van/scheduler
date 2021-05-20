@@ -9,37 +9,6 @@ const useApplicationData = () => {
     appointments: {}
   });
 
-  // REDUCER STUFF -------------------------------------------------------
-
-  // const SET_DAY = "SET_DAY";
-  // const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
-  // const SET_INTERVIEW = "SET_INTERVIEW";
-  
-  // function reducer(state, action) {
-  //   switch (action.type) {
-  //     case SET_DAY:
-  //       return { setDay }
-  //     case SET_APPLICATION_DATA:
-  //       return { updateSpots }
-  //     case SET_INTERVIEW: {
-  //       return (bookInterview, cancelInterview)
-  //     }
-  //     default:
-  //       throw new Error(
-  //         `Tried to reduce with unsupported action type: ${action.type}`
-  //       );
-  //   };
-  // };
-
-  // const [state, dispatch] = useReducer(reducer, {
-  //   day: "Monday",
-  //   days: [],
-  //   appointments: {}
-  // });
-  
-
-  // REDUCER STUFF -------------------------------------------------------
-  
   useEffect(() => {
     Promise.all([
       axios
@@ -86,7 +55,6 @@ const useApplicationData = () => {
 
     return newWeek;
   };
-  
   
   const bookInterview = (id, interview) => {  
     const appointment = {

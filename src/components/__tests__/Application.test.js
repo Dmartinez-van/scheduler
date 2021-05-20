@@ -20,8 +20,6 @@ describe("Application tests", () => {
       });
   });
 
-  // Skipping test because it cannot be run along side the EDIT test.. Must change
-  // ID in mock.axios put function from 2->1 in order for this skipped test to work.
   it("loads data, books an interview and reduces the spots remaining for Monday by 1", async () => {
     const { container, debug } = render(<Application />);
     await waitForElement(() => getByText(container, "Archie Cohen"));
@@ -147,7 +145,7 @@ describe("Application tests", () => {
     expect(getByText(appointment, "Deleting")).toBeInTheDocument();
     
     await waitForElement(() => getByText(appointment, "Error"));
-    
+
     expect(getByText(appointment, "Could not delete appointment")).toBeInTheDocument();
   });
 

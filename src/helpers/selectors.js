@@ -1,5 +1,4 @@
 const getAppointmentsForDay = function(state, day) {
-  // console.log("Before", state)
   if (!state.days.length) {
     return [];
   }
@@ -16,7 +15,6 @@ const getAppointmentsForDay = function(state, day) {
     return state.appointments[appointmentId] 
   });
 
-  // console.log("After", state)
   return appointmentsForDay
 }
 
@@ -24,8 +22,7 @@ const getInterview = function(state, interview) {
   if(!interview) {
     return null
   }
-  // const student = interview.student;
-  // const interviewer = state.interviewers[interview.interviewer]
+
   const interviewObject = {
     student: interview.student,
     interviewer: state.interviewers[interview.interviewer]
@@ -50,7 +47,7 @@ const getInterviewersForDay = function(state, day) {
   const interviewersForDay = filteredDays[0].interviewers.map((interviewerId) => {
     return state.interviewers[interviewerId] 
   });
-  // console.log(interviewersForDay)
+
   return interviewersForDay
 }
 

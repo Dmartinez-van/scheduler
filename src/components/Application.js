@@ -1,13 +1,12 @@
 import React from "react";
-
 import "components/Application.scss";
+
 import DayList from "./DayList";
 import Appointment from "components/Appointment";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors"
 import useApplicationData from "hooks/useApplicationData"
 
 export default function Application() {
-
   const {
     state,
     setDay,
@@ -22,9 +21,6 @@ export default function Application() {
       <Appointment 
         key={appointment.id}
         {...appointment}
-        // key={appointment.id} 
-        // id = {appointment.id}
-        // time = {appointment.time}
         interview={getInterview(state, appointment.interview)}
         interviewers={interviewerArr}
         bookInterview={bookInterview}
@@ -43,7 +39,6 @@ export default function Application() {
               days={state.days}
               day={state.day}
               setDay={setDay}
-              // setDay={dispatch({type: SET_DAY, day})
             />
           </nav>
           <img className="sidebar__lhl sidebar--centered" src="images/lhl.png" alt="Lighthouse Labs"/>

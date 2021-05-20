@@ -24,7 +24,6 @@ export default function Form(props) {
       setError("Student name cannot be blank");
       return;
     }
-    // ********** To implement the below conditional, I need to figure out how to test a selection of an interviewer first ****** 
     if (interviewer === null) {
       setError("Interviewer cannot be blank");
       return;
@@ -45,9 +44,6 @@ export default function Form(props) {
             value={name}
             onChange={(event) => setName(event.target.value)}
             data-testid={"student-name-input"}
-            /*
-            This must be a controlled component
-            */
           />
         </form>
         <section className="appointment__validation" data-testid={"interviewer-select"}>{error}</section>
