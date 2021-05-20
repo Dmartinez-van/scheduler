@@ -39,8 +39,11 @@ npm run storybook
 - WebSockets
 
 ## ScreenShots
+Example of weekday List of appointments
 ![Example of weekday List of appointments](https://github.com/Dmartinez-van/scheduler/blob/master/docs/Appointments_Monday.png)
 
+Example of Editing existing appointment
 ![Example of Editing existing appointment](https://github.com/Dmartinez-van/scheduler/blob/master/docs/Appointments_Monday_edit.png)
 
+Example of Deleting existing appointment
 ![Example of Deleting existing appointment](https://github.com/Dmartinez-van/scheduler/blob/master/docs/Appointments_Monday_delete.png)
