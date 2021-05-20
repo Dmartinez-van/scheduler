@@ -1,5 +1,12 @@
 # Interview Scheduler
 
+## Summary
+The scheduler app is a SPA built with create-react-app. It utilizes a PostgreSQL database for data persistence. A user may Create, Edit, and Delete appointments for any given day, Monday to Friday. 
+
+Tests were conducted throughout development using Jest. End-to-end testing was conducted with Cypress.
+
+This project was completed as a part of the LighthouseLabs Web Development program.
+
 ## Setup
 
 Install dependencies with `npm install`.
@@ -21,3 +28,19 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Project Learnings
+- React
+- Axios
+- Storybook, Webpack Dev Server, Jest, Testing Library, Cypress
+
+## Potential for Additional Learning
+- Webpack, Babel
+- WebSockets
+
+## ScreenShots
+![Example of weekday List of appointments]()
+
+![Example of Editing existing appointment]()
+
+![Example of Deleting existing appointment]()
