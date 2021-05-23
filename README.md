@@ -12,7 +12,9 @@ This project was completed as a part of the LighthouseLabs Web Development progr
 Install dependencies with `npm install`.
 
 ## Running Webpack Development Server
-This will run on localhost:8000 by default
+This will run on localhost:8000 by default. This project is intended to be run along side the LHL scheduler-api project (https://github.com/Dmartinez-van/scheduler-api).
+
+To run the Scheduler React Program:
 ```sh
 npm start
 ```
