@@ -5,8 +5,9 @@ import Button from "components/Button";
 export default function Form(props) {
 
   const [name, setName] = useState(props.name || "");
-  const [interviewer, setInterviewer] = useState(props.value || null);
+  const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
+  console.log("props.interviewer: ", props.interviewer);
 
   const reset = () => {
       setName("");
@@ -48,14 +49,14 @@ export default function Form(props) {
         <section className="appointment__validation" data-testid={"interviewer-select"}>{error}</section>
         <InterviewerList
           interviewers={props.interviewers}
-          value={interviewer}
+          value={interviewer.id}
           onChange={setInterviewer}
         />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={event => validate()}>Save</Button>
+          <Button confirm onClick={validate}>Save</Button>
         </section>
       </section>
     </main>

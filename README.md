@@ -12,7 +12,7 @@ This project was completed as a part of the LighthouseLabs Web Development progr
 Install dependencies with `npm install`.
 
 ## Running Webpack Development Server
-
+This will run on localhost:8000 by default
 ```sh
 npm start
 ```
