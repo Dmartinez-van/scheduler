@@ -45,7 +45,7 @@ const getInterviewersForDay = function(state, day) {
 
   // Find matching interviewers information in filteredDays in state.interviewers and return that array
   const interviewersForDay = filteredDays[0].interviewers.map((interviewerId) => {
-    return state.interviewers[interviewerId] 
+    return state.interviewers[interviewerId];
   });
 
   return interviewersForDay;
